@@ -1,0 +1,1142 @@
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE DATABASE "rails_api_base_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "rails_api_base_test" ENCODING = 'unicode'[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (60.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rails_api_base_development"[0m
+  [1m[35m (59.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rails_api_base_test"[0m
+  [1m[35m (212.2ms)[0m  [1m[35mCREATE DATABASE "rails_api_base_development" ENCODING = 'unicode'[0m
+  [1m[35m (94.0ms)[0m  [1m[35mCREATE DATABASE "rails_api_base_test" ENCODING = 'unicode'[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+        bin/rails db:migrate RAILS_ENV=development
+You have 11 pending migrations:
+20161011151353_devise_create_users.rb
+20161011184702_devise_create_admin_users.rb
+20161017183759_add_devise_token_auth_fields_users.rb
+20161027190856_create_delayed_jobs.rb
+20181102142200_create_active_storage_tables.active_storage.rb
+20200128183708_create_settings.rb
+20210910031612_add_service_name_to_active_storage_blobs.active_storage.rb
+20210910031613_create_active_storage_variant_records.active_storage.rb
+20220905200553_remove_not_null_on_active_storage_blobs_checksum.active_storage.rb
+20230704182448_create_flipper_tables.rb
+20240109165800_change_flipper_gates_value_to_text.rb:
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+        bin/rails db:migrate RAILS_ENV=development
+You have 11 pending migrations:
+20161011151353_devise_create_users.rb
+20161011184702_devise_create_admin_users.rb
+20161017183759_add_devise_token_auth_fields_users.rb
+20161027190856_create_delayed_jobs.rb
+20181102142200_create_active_storage_tables.active_storage.rb
+20200128183708_create_settings.rb
+20210910031612_add_service_name_to_active_storage_blobs.active_storage.rb
+20210910031613_create_active_storage_variant_records.active_storage.rb
+20220905200553_remove_not_null_on_active_storage_blobs_checksum.active_storage.rb
+20230704182448_create_flipper_tables.rb
+20240109165800_change_flipper_gates_value_to_text.rb:
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7594105865894673090)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20161011151353)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW server_version_num[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET statement_timeout TO 3600000[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET lock_timeout TO 10000[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial NOT NULL PRIMARY KEY, "email" character varying, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "allow_password_change" boolean DEFAULT FALSE NOT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "first_name" character varying DEFAULT '', "last_name" character varying DEFAULT '', "username" character varying DEFAULT '', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mANALYZE "users"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mANALYZE "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161011151353"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateAdminUsers (20161011184702)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW server_version_num[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET statement_timeout TO 3600000[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET lock_timeout TO 10000[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" serial NOT NULL PRIMARY KEY, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admin_users_on_email" ON "admin_users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mANALYZE "admin_users"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admin_users_on_reset_password_token" ON "admin_users" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mANALYZE "admin_users"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161011184702"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeviseTokenAuthFieldsUsers (20161017183759)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW server_version_num[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET statement_timeout TO 3600000[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET lock_timeout TO 10000[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" character varying DEFAULT 'email' NOT NULL, ADD "uid" character varying DEFAULT '' NOT NULL, ADD "tokens" json[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_uid_and_provider" ON "users" ("uid", "provider")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161017183759"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDelayedJobs (20161027190856)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW server_version_num[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET statement_timeout TO 3600000[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET lock_timeout TO 10000[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "delayed_jobs"[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "delayed_jobs" ("id" serial NOT NULL PRIMARY KEY, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" timestamp, "locked_at" timestamp, "failed_at" timestamp, "locked_by" character varying, "queue" character varying, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mANALYZE "delayed_jobs"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161027190856"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveStorageTables (20181102142200)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW server_version_num[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET statement_timeout TO 3600000[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET lock_timeout TO 10000[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181102142200"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSettings (20200128183708)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW server_version_num[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET statement_timeout TO 3600000[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET lock_timeout TO 10000[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "settings" ("id" bigserial primary key, "key" character varying NOT NULL, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_settings_on_key" ON "settings" ("key")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200128183708"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddServiceNameToActiveStorageBlobs (20210910031612)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW server_version_num[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET statement_timeout TO 3600000[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET lock_timeout TO 10000[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "active_storage_blobs" ADD "service_name" character varying[0m
+  [1m[36mActiveStorage::Blob Update All (1.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "service_name" = $1[0m  [["service_name", "local"]]
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "active_storage_blobs" ALTER COLUMN "service_name" TYPE character varying, ALTER COLUMN "service_name" SET NOT NULL[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210910031612"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveStorageVariantRecords (20210910031613)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW server_version_num[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET statement_timeout TO 3600000[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET lock_timeout TO 10000[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210910031613"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveNotNullOnActiveStorageBlobsChecksum (20220905200553)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW server_version_num[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET statement_timeout TO 3600000[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET lock_timeout TO 10000[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "active_storage_blobs" ALTER COLUMN "checksum" DROP NOT NULL[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220905200553"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFlipperTables (20230704182448)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW server_version_num[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET statement_timeout TO 3600000[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET lock_timeout TO 10000[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "flipper_features" ("id" bigserial primary key, "key" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_flipper_features_on_key" ON "flipper_features" ("key")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mANALYZE "flipper_features"[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "flipper_gates" ("id" bigserial primary key, "feature_key" character varying NOT NULL, "key" character varying NOT NULL, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_flipper_gates_on_feature_key_and_key_and_value" ON "flipper_gates" ("feature_key", "key", "value")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mANALYZE "flipper_gates"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230704182448"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeFlipperGatesValueToText (20240109165800)
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW server_version_num[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET statement_timeout TO 3600000[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET lock_timeout TO 10000[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP INDEX  "index_flipper_gates_on_feature_key_and_key_and_value"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "flipper_gates" ALTER COLUMN "value" TYPE text[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE UNIQUE INDEX CONCURRENTLY "index_flipper_gates_on_feature_key_and_key_and_value" ON "flipper_gates" ("feature_key", "key", "value")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mANALYZE "flipper_gates"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240109165800"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-01-10 07:51:31.821485"], ["updated_at", "2024-01-10 07:51:31.821485"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7594105865894673090)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/ format=html controller=Rails::WelcomeController action=index status=200 allocations=4510 duration=16.93 view=5.46 db=0.00 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (13.9ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/ format=html controller=Rails::WelcomeController action=index status=200 allocations=933 duration=5.71 view=4.74 db=0.00 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/ format=html controller=Rails::WelcomeController action=index status=200 allocations=152 duration=0.62 view=0.36 db=0.00 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/ format=html controller=Rails::WelcomeController action=index status=200 allocations=150 duration=0.40 view=0.21 db=0.00 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/ format=html controller=Rails::WelcomeController action=index status=200 allocations=148 duration=0.33 view=0.18 db=0.00 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/ format=html controller=Rails::WelcomeController action=index status=200 allocations=148 duration=0.35 view=0.19 db=0.00 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/ format=html controller=Rails::WelcomeController action=index status=200 allocations=149 duration=0.42 view=0.23 db=0.00 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/admin format=html controller=Admin::DashboardController action=index status=0 allocations=10510 duration=23.99 view=0.00 db=0.00 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/admin/login format=html controller=ActiveAdmin::Devise::SessionsController action=new status=500 allocations=29439 duration=61.46 view=0.00 db=6.52 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+SassC::SyntaxError - Error: File to import not found or unreadable: arctic_admin/src/scss/main.
+        on line 11:1 of app/assets/stylesheets/active_admin.scss
+>> @import 'arctic_admin/src/scss/main';
+   ^:
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/admin/login format=html controller=ActiveAdmin::Devise::SessionsController action=new status=500 allocations=13749 duration=14.01 view=0.00 db=0.00 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+SassC::SyntaxError - Error: File to import not found or unreadable: arctic_admin/main.
+        on line 11:1 of app/assets/stylesheets/active_admin.scss
+>> @import 'arctic_admin/main';
+   ^:
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/admin/login format=html controller=ActiveAdmin::Devise::SessionsController action=new status=500 allocations=30111 duration=106.97 view=0.00 db=4.01 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+SassC::SyntaxError - Error: File to import not found or unreadable: arctic_admin/src/scss/main.
+        on line 11:1 of app/assets/stylesheets/active_admin.scss
+>> @import 'arctic_admin/src/scss/main';
+   ^:
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/admin/login format=html controller=ActiveAdmin::Devise::SessionsController action=new status=500 allocations=229852 duration=4977.98 view=0.00 db=4.58 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "active_admin.js" is not present in the asset pipeline.:
+
+  [1m[35m (11.0ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/admin/login format=html controller=ActiveAdmin::Devise::SessionsController action=new status=200 allocations=592353 duration=3896.98 view=3869.53 db=4.09 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/admin/login format=html controller=ActiveAdmin::Devise::SessionsController action=new status=200 allocations=119534 duration=426.70 view=390.13 db=14.95 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/admin/login format=html controller=ActiveAdmin::Devise::SessionsController action=new status=200 allocations=29763 duration=25.73 view=25.11 db=0.00 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/admin/login format=html controller=ActiveAdmin::Devise::SessionsController action=new status=200 allocations=29743 duration=31.50 view=30.78 db=0.00 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/admin/login format=html controller=ActiveAdmin::Devise::SessionsController action=new status=200 allocations=29741 duration=28.22 view=27.21 db=0.00 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/ format=html controller=Rails::WelcomeController action=index status=200 allocations=1022 duration=2.24 view=1.39 db=0.00 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/admin/login format=html controller=ActiveAdmin::Devise::SessionsController action=new status=200 allocations=64206 duration=75.66 view=74.61 db=0.00 host=localhost query_string= referer= user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "admin_users" WHERE "admin_users"."email" = $1 LIMIT $2[0m  [["email", "shahzaib@qr-bot.com"], ["LIMIT", 1]]
+  [1m[36mAdminUser Create (3.8ms)[0m  [1m[32mINSERT INTO "admin_users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "shahzaib@qr-bot.com"], ["encrypted_password", "$2a$11$hoKtiSkx1SJLHi/a9i5MqO1V2TrT8JBkz/VN7xtGpE5.BhzLHxjeu"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["created_at", "2024-01-10 09:03:11.774887"], ["updated_at", "2024-01-10 09:03:11.774887"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (1.1ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["email", "shahzaib@qr-bot.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Update (0.4ms)[0m  [1m[33mUPDATE "admin_users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "admin_users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2024-01-10 09:03:22.424625"], ["last_sign_in_at", "2024-01-10 09:03:22.424625"], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["updated_at", "2024-01-10 09:03:22.425070"], ["id", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+method=POST path=/admin/login format=html controller=ActiveAdmin::Devise::SessionsController action=create status=302 allocations=12268 duration=133.37 view=0.00 db=2.54 location=http://localhost:3000/admin host=localhost query_string= referer=http://localhost:3000/admin/login user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=GET path=/admin format=html controller=Admin::DashboardController action=index status=200 allocations=38287 duration=57.03 view=41.06 db=5.37 host=localhost query_string= referer=http://localhost:3000/admin/login user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY "admin_users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+method=GET path=/admin/admin_users format=html controller=Admin::AdminUsersController action=index status=200 allocations=50798 duration=86.77 view=69.85 db=0.90 host=localhost query_string= referer=http://localhost:3000/admin user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE AdminUser Load (0.0ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=GET path=/admin/admin_users/1/edit format=html controller=Admin::AdminUsersController action=edit status=200 allocations=43478 duration=52.56 view=47.73 db=0.50 host=localhost query_string= referer=http://localhost:3000/admin/admin_users user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=GET path=/admin/logout format=html controller=ActiveAdmin::Devise::SessionsController action=destroy status=302 allocations=2603 duration=9.50 view=0.00 db=0.32 location=http://localhost:3000/admin host=localhost query_string= referer=http://localhost:3000/admin/admin_users user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/admin format=html controller=Admin::DashboardController action=index status=0 allocations=330 duration=0.54 view=0.00 db=0.00 host=localhost query_string= referer=http://localhost:3000/admin/admin_users user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/admin/login format=html controller=ActiveAdmin::Devise::SessionsController action=new status=200 allocations=29202 duration=26.86 view=26.12 db=0.00 host=localhost query_string= referer=http://localhost:3000/admin/admin_users user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["email", "shahzaib@qr-bot.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Update (0.3ms)[0m  [1m[33mUPDATE "admin_users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "updated_at" = $3 WHERE "admin_users"."id" = $4[0m  [["sign_in_count", 2], ["current_sign_in_at", "2024-01-10 09:03:53.462596"], ["updated_at", "2024-01-10 09:03:53.462811"], ["id", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+method=POST path=/admin/login format=html controller=ActiveAdmin::Devise::SessionsController action=create status=302 allocations=6647 duration=113.22 view=0.00 db=1.26 location=http://localhost:3000/admin host=localhost query_string= referer=http://localhost:3000/admin/login user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=GET path=/admin format=html controller=Admin::DashboardController action=index status=200 allocations=27573 duration=24.96 view=22.32 db=0.17 host=localhost query_string= referer=http://localhost:3000/admin/login user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY "admin_users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+method=GET path=/admin/admin_users format=html controller=Admin::AdminUsersController action=index status=200 allocations=43218 duration=46.23 view=42.54 db=0.68 host=localhost query_string= referer=http://localhost:3000/admin user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=GET path=/admin/dashboard format=html controller=Admin::DashboardController action=index status=200 allocations=27745 duration=38.33 view=34.42 db=0.21 host=localhost query_string= referer=http://localhost:3000/admin/admin_users user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY "admin_users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+method=GET path=/admin/admin_users format=html controller=Admin::AdminUsersController action=index status=200 allocations=43191 duration=44.81 view=41.50 db=0.58 host=localhost query_string= referer=http://localhost:3000/admin/dashboard user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (2.7ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (1.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (1.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+method=GET path=/admin/users format=html controller=Admin::UsersController action=index status=200 allocations=43059 duration=51.65 view=45.29 db=2.43 host=localhost query_string= referer=http://localhost:3000/admin/admin_users user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=GET path=/admin/users/new format=html controller=Admin::UsersController action=new status=200 allocations=43367 duration=47.30 view=44.43 db=0.17 host=localhost query_string= referer=http://localhost:3000/admin/users user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["uid", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "allow_password_change", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "first_name", "last_name", "username", "created_at", "updated_at", "provider", "uid", "tokens") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18) RETURNING "id"[0m  [["email", "shahzaibsardar777@gmail.com"], ["encrypted_password", "$2a$11$Ig7Dy/u7PlRgR5NhTMzcieNTQQ1573ECsyv8g5WjEpoUrNIH2lb6i"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["allow_password_change", false], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["first_name", "M Shahzaib"], ["last_name", "Asif"], ["username", "Shahzaib Asif"], ["created_at", "2024-01-10 09:04:48.367616"], ["updated_at", "2024-01-10 09:04:48.367616"], ["provider", "email"], ["uid", "shahzaibsardar777@gmail.com"], ["tokens", nil]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+method=POST path=/admin/users format=html controller=Admin::UsersController action=create status=302 allocations=12365 duration=130.52 view=0.00 db=10.79 location=http://localhost:3000/admin/users/1 host=localhost query_string= referer=http://localhost:3000/admin/users/new user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=GET path=/admin/users/1 format=html controller=Admin::UsersController action=show status=200 allocations=32757 duration=37.86 view=33.52 db=0.42 host=localhost query_string= referer=http://localhost:3000/admin/users/new user_agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/@fortawesome/fontawesome-free/css/all.css"):
+  
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/login"):
+  
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=POST path=/api/v1/users format=*/* controller=API::V1::RegistrationsController action=create status=400 allocations=903 duration=0.63 view=0.00 db=0.00 host=localhost query_string= referer= user_agent=curl/8.1.1
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/v1/registrations_controller.rb:12:in `sign_up_params'
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=POST path=/api/v1/users format=*/* controller=API::V1::RegistrationsController action=create status=400 allocations=726 duration=0.44 view=0.00 db=0.00 host=localhost query_string= referer= user_agent=curl/8.1.1
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/v1/registrations_controller.rb:12:in `sign_up_params'
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+method=POST path=/api/v1/users format=*/* controller=API::V1::RegistrationsController action=create status=422 allocations=830 duration=0.63 view=0.00 db=0.00 host=localhost query_string= referer= user_agent=curl/8.1.1
+
+ActionController::InvalidAuthenticityToken - Can't verify CSRF token authenticity.:
+
+  [1m[35m (13.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+method=POST path=/api/v1/users format=*/* controller=API::V1::RegistrationsController action=create status=422 allocations=1071 duration=2.19 view=0.00 db=0.00 host=localhost query_string= referer= user_agent=curl/8.1.1
+
+ActionController::InvalidAuthenticityToken - Can't verify CSRF token authenticity.:
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+method=POST path=/api/v1/users format=*/* controller=API::V1::RegistrationsController action=create status=422 allocations=836 duration=0.55 view=0.00 db=0.00 host=localhost query_string= referer= user_agent=curl/8.1.1
+
+ActionController::InvalidAuthenticityToken - Can't verify CSRF token authenticity.:
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+method=POST path=/api/v1/users format=*/* controller=API::V1::RegistrationsController action=create status=422 allocations=1071 duration=8.80 view=0.00 db=0.00 host=localhost query_string= referer= user_agent=curl/8.1.1
+
+ActionController::InvalidAuthenticityToken - Can't verify CSRF token authenticity.:
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+method=POST path=/api/v1/users format=*/* controller=API::V1::RegistrationsController action=create status=422 allocations=836 duration=0.59 view=0.00 db=0.00 host=localhost query_string= referer= user_agent=curl/8.1.1
+
+ActionController::InvalidAuthenticityToken - Can't verify CSRF token authenticity.:
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "admin_users" WHERE "admin_users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[36mAdminUser Create (0.4ms)[0m  [1m[32mINSERT INTO "admin_users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "admin@example.com"], ["encrypted_password", "$2a$11$ADQ0FFI7XfrAUZRValWEtu4Ei1DasUhWmU1sg7NT/jOZU86vCBGFu"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["created_at", "2024-01-10 09:28:55.436517"], ["updated_at", "2024-01-10 09:28:55.436517"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSetting Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "settings" WHERE "settings"."key" = $1 LIMIT $2[0m  [["key", "min_version"], ["LIMIT", 1]]
+  [1m[36mSetting Create (2.5ms)[0m  [1m[32mINSERT INTO "settings" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["key", "min_version"], ["value", "0.0"], ["created_at", "2024-01-10 09:28:55.453726"], ["updated_at", "2024-01-10 09:28:55.453726"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+
+NoMethodError - undefined method `before_filter' for class ApplicationController:
+  app/controllers/application_controller.rb:6:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:3:in `<main>'
+  app/controllers/api/v1/registrations_controller.rb:5:in `<module:V1>'
+  app/controllers/api/v1/registrations_controller.rb:4:in `<module:API>'
+  app/controllers/api/v1/registrations_controller.rb:3:in `<main>'
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=POST path=/api/v1/users format=*/* controller=API::V1::RegistrationsController action=create status=400 allocations=951 duration=1.97 view=0.00 db=0.00 host=localhost query_string= referer= user_agent=curl/8.1.1
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/v1/registrations_controller.rb:12:in `sign_up_params'
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:39:58.870257"], ["tokens", "\"{\\\"OmGlPf6X5FIJC1az9Malzw\\\":{\\\"token\\\":\\\"$2a$10$n35R.9iIEAJ5PamAKRuMp.CiqWKXCczn6RocmASkzqSspJ/Khqo/O\\\",\\\"expiry\\\":1768037998}}\""], ["id", 1]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2024-01-10 09:39:58.880425"], ["last_sign_in_at", "2024-01-10 09:39:58.880425"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2024-01-10 09:39:58.880771"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=200 allocations=21565 duration=197.67 view=7.22 db=13.24 unpermitted_params=["password_confirmation", "password_confirmation", "password_confirmation", "password_confirmation"] host=localhost query_string= referer= user_agent=curl/8.1.1
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:43:51.993056"], ["tokens", "\"{\\\"OmGlPf6X5FIJC1az9Malzw\\\":{\\\"token\\\":\\\"$2a$10$n35R.9iIEAJ5PamAKRuMp.CiqWKXCczn6RocmASkzqSspJ/Khqo/O\\\",\\\"expiry\\\":1768037998},\\\"NVaq6fjB6_EjxblqmPkM4Q\\\":{\\\"token\\\":\\\"$2a$10$BZgHnBvYcxi3.NSzEALcuOyAj4Ife4liKAb8zNsrJBTbS2H9HnFSW\\\",\\\"expiry\\\":1768038231}}\""], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 2], ["current_sign_in_at", "2024-01-10 09:43:51.995738"], ["updated_at", "2024-01-10 09:43:51.996047"], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=500 allocations=14192 duration=180.76 view=0.00 db=6.32 unpermitted_params=["password_confirmation", "password_confirmation", "password_confirmation", "password_confirmation"] host=localhost query_string= referer= user_agent=curl/8.1.1
+
+NoMethodError - undefined method `token' for an instance of Hash:
+  app/controllers/api/v1/sessions_controller.rb:12:in `block in create'
+  app/controllers/api/v1/sessions_controller.rb:10:in `create'
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:44:58.349881"], ["tokens", "\"{\\\"OmGlPf6X5FIJC1az9Malzw\\\":{\\\"token\\\":\\\"$2a$10$n35R.9iIEAJ5PamAKRuMp.CiqWKXCczn6RocmASkzqSspJ/Khqo/O\\\",\\\"expiry\\\":1768037998},\\\"NVaq6fjB6_EjxblqmPkM4Q\\\":{\\\"token\\\":\\\"$2a$10$BZgHnBvYcxi3.NSzEALcuOyAj4Ife4liKAb8zNsrJBTbS2H9HnFSW\\\",\\\"expiry\\\":1768038231},\\\"eDmKA7J2K-wExovSYSM7Mg\\\":{\\\"token\\\":\\\"$2a$10$Ye/i.6ZLqohIWGHYfxiq5..IjMAlW8APamcCZtMX3O5MXOTYmurOS\\\",\\\"expiry\\\":1768038298}}\""], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 3], ["current_sign_in_at", "2024-01-10 09:44:58.352830"], ["last_sign_in_at", "2024-01-10 09:43:51.995738"], ["updated_at", "2024-01-10 09:44:58.353166"], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=500 allocations=14534 duration=178.30 view=0.11 db=5.83 unpermitted_params=["password_confirmation", "password_confirmation", "password_confirmation", "password_confirmation"] host=localhost query_string= referer= user_agent=curl/8.1.1
+
+NoMethodError - undefined method `client' for an instance of Hash:
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:45:34.712729"], ["tokens", "\"{\\\"OmGlPf6X5FIJC1az9Malzw\\\":{\\\"token\\\":\\\"$2a$10$n35R.9iIEAJ5PamAKRuMp.CiqWKXCczn6RocmASkzqSspJ/Khqo/O\\\",\\\"expiry\\\":1768037998},\\\"NVaq6fjB6_EjxblqmPkM4Q\\\":{\\\"token\\\":\\\"$2a$10$BZgHnBvYcxi3.NSzEALcuOyAj4Ife4liKAb8zNsrJBTbS2H9HnFSW\\\",\\\"expiry\\\":1768038231},\\\"eDmKA7J2K-wExovSYSM7Mg\\\":{\\\"token\\\":\\\"$2a$10$Ye/i.6ZLqohIWGHYfxiq5..IjMAlW8APamcCZtMX3O5MXOTYmurOS\\\",\\\"expiry\\\":1768038298},\\\"dzBaACRumiLCsFNcTyDElQ\\\":{\\\"token\\\":\\\"$2a$10$BF/20dILYUlwV3UyWkCogOBLt.W5eTmNvhY5YWgS0CrkaO6rEGgxS\\\",\\\"expiry\\\":1768038334}}\""], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 4], ["current_sign_in_at", "2024-01-10 09:45:34.715366"], ["last_sign_in_at", "2024-01-10 09:44:58.352830"], ["updated_at", "2024-01-10 09:45:34.715615"], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=500 allocations=14572 duration=195.34 view=0.10 db=5.59 unpermitted_params=["password_confirmation", "password_confirmation", "password_confirmation", "password_confirmation"] host=localhost query_string= referer= user_agent=curl/8.1.1
+
+NoMethodError - undefined method `client' for nil:
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:45:36.539506"], ["tokens", "\"{\\\"OmGlPf6X5FIJC1az9Malzw\\\":{\\\"token\\\":\\\"$2a$10$n35R.9iIEAJ5PamAKRuMp.CiqWKXCczn6RocmASkzqSspJ/Khqo/O\\\",\\\"expiry\\\":1768037998},\\\"NVaq6fjB6_EjxblqmPkM4Q\\\":{\\\"token\\\":\\\"$2a$10$BZgHnBvYcxi3.NSzEALcuOyAj4Ife4liKAb8zNsrJBTbS2H9HnFSW\\\",\\\"expiry\\\":1768038231},\\\"eDmKA7J2K-wExovSYSM7Mg\\\":{\\\"token\\\":\\\"$2a$10$Ye/i.6ZLqohIWGHYfxiq5..IjMAlW8APamcCZtMX3O5MXOTYmurOS\\\",\\\"expiry\\\":1768038298},\\\"dzBaACRumiLCsFNcTyDElQ\\\":{\\\"token\\\":\\\"$2a$10$BF/20dILYUlwV3UyWkCogOBLt.W5eTmNvhY5YWgS0CrkaO6rEGgxS\\\",\\\"expiry\\\":1768038334},\\\"duA4HTM2CjgLFXGno35xbw\\\":{\\\"token\\\":\\\"$2a$10$Uj68Fa5oCY5q5YDbWSoNPuDBQjmoEESWAniUH4xZ46xFpxkUemjky\\\",\\\"expiry\\\":1768038336}}\""], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 5], ["current_sign_in_at", "2024-01-10 09:45:36.541875"], ["last_sign_in_at", "2024-01-10 09:45:34.715366"], ["updated_at", "2024-01-10 09:45:36.542142"], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=500 allocations=8755 duration=164.40 view=0.18 db=2.42 unpermitted_params=["password_confirmation", "password_confirmation", "password_confirmation", "password_confirmation"] host=localhost query_string= referer= user_agent=curl/8.1.1
+
+NoMethodError - undefined method `client' for nil:
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:46:08.606963"], ["tokens", "\"{\\\"NVaq6fjB6_EjxblqmPkM4Q\\\":{\\\"token\\\":\\\"$2a$10$BZgHnBvYcxi3.NSzEALcuOyAj4Ife4liKAb8zNsrJBTbS2H9HnFSW\\\",\\\"expiry\\\":1768038231},\\\"eDmKA7J2K-wExovSYSM7Mg\\\":{\\\"token\\\":\\\"$2a$10$Ye/i.6ZLqohIWGHYfxiq5..IjMAlW8APamcCZtMX3O5MXOTYmurOS\\\",\\\"expiry\\\":1768038298},\\\"dzBaACRumiLCsFNcTyDElQ\\\":{\\\"token\\\":\\\"$2a$10$BF/20dILYUlwV3UyWkCogOBLt.W5eTmNvhY5YWgS0CrkaO6rEGgxS\\\",\\\"expiry\\\":1768038334},\\\"duA4HTM2CjgLFXGno35xbw\\\":{\\\"token\\\":\\\"$2a$10$Uj68Fa5oCY5q5YDbWSoNPuDBQjmoEESWAniUH4xZ46xFpxkUemjky\\\",\\\"expiry\\\":1768038336},\\\"5waviC_lCrkTsSXmReUYKg\\\":{\\\"token\\\":\\\"$2a$10$LCOCZ7mw5wrX8nlJaJMGS.fx9zVU5Pbs8JkphE7PsZQWzXdEdMGgq\\\",\\\"expiry\\\":1768038368}}\""], ["id", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 6], ["current_sign_in_at", "2024-01-10 09:46:08.610064"], ["last_sign_in_at", "2024-01-10 09:45:36.541875"], ["updated_at", "2024-01-10 09:46:08.610707"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=200 allocations=20154 duration=175.18 view=1.09 db=6.48 unpermitted_params=["password_confirmation", "password_confirmation", "password_confirmation", "password_confirmation"] host=localhost query_string= referer= user_agent=curl/8.1.1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:47:25.741575"], ["tokens", "\"{\\\"eDmKA7J2K-wExovSYSM7Mg\\\":{\\\"token\\\":\\\"$2a$10$Ye/i.6ZLqohIWGHYfxiq5..IjMAlW8APamcCZtMX3O5MXOTYmurOS\\\",\\\"expiry\\\":1768038298},\\\"dzBaACRumiLCsFNcTyDElQ\\\":{\\\"token\\\":\\\"$2a$10$BF/20dILYUlwV3UyWkCogOBLt.W5eTmNvhY5YWgS0CrkaO6rEGgxS\\\",\\\"expiry\\\":1768038334},\\\"duA4HTM2CjgLFXGno35xbw\\\":{\\\"token\\\":\\\"$2a$10$Uj68Fa5oCY5q5YDbWSoNPuDBQjmoEESWAniUH4xZ46xFpxkUemjky\\\",\\\"expiry\\\":1768038336},\\\"5waviC_lCrkTsSXmReUYKg\\\":{\\\"token\\\":\\\"$2a$10$LCOCZ7mw5wrX8nlJaJMGS.fx9zVU5Pbs8JkphE7PsZQWzXdEdMGgq\\\",\\\"expiry\\\":1768038368},\\\"UakubXVHJFuVQKRWJcsDTA\\\":{\\\"token\\\":\\\"$2a$10$yVzXiCc17jgmic5VIdUpVO50XmC2DgHnoF8LZbiE1pT88umlKYUI6\\\",\\\"expiry\\\":1768038445}}\""], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 7], ["current_sign_in_at", "2024-01-10 09:47:25.744829"], ["last_sign_in_at", "2024-01-10 09:46:08.610064"], ["updated_at", "2024-01-10 09:47:25.745204"], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=200 allocations=1246225 duration=38153.79 view=0.18 db=7.09 unpermitted_params=["password_confirmation", "password_confirmation", "password_confirmation", "password_confirmation"] host=localhost query_string= referer= user_agent=curl/8.1.1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:48:04.002520"], ["tokens", "\"{\\\"dzBaACRumiLCsFNcTyDElQ\\\":{\\\"token\\\":\\\"$2a$10$BF/20dILYUlwV3UyWkCogOBLt.W5eTmNvhY5YWgS0CrkaO6rEGgxS\\\",\\\"expiry\\\":1768038334},\\\"duA4HTM2CjgLFXGno35xbw\\\":{\\\"token\\\":\\\"$2a$10$Uj68Fa5oCY5q5YDbWSoNPuDBQjmoEESWAniUH4xZ46xFpxkUemjky\\\",\\\"expiry\\\":1768038336},\\\"5waviC_lCrkTsSXmReUYKg\\\":{\\\"token\\\":\\\"$2a$10$LCOCZ7mw5wrX8nlJaJMGS.fx9zVU5Pbs8JkphE7PsZQWzXdEdMGgq\\\",\\\"expiry\\\":1768038368},\\\"UakubXVHJFuVQKRWJcsDTA\\\":{\\\"token\\\":\\\"$2a$10$yVzXiCc17jgmic5VIdUpVO50XmC2DgHnoF8LZbiE1pT88umlKYUI6\\\",\\\"expiry\\\":1768038445},\\\"zzYUYRZgJy4ZazTOou5-Cg\\\":{\\\"token\\\":\\\"$2a$10$BZMRndSDsrtPjjJwzEthbuxwwPpDqyfKC7RlEj9JzcgY.QS3QbVGK\\\",\\\"expiry\\\":1768038483}}\""], ["id", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (40.7ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:48:04.058790"], ["tokens", "\"{\\\"duA4HTM2CjgLFXGno35xbw\\\":{\\\"token\\\":\\\"$2a$10$Uj68Fa5oCY5q5YDbWSoNPuDBQjmoEESWAniUH4xZ46xFpxkUemjky\\\",\\\"expiry\\\":1768038336},\\\"5waviC_lCrkTsSXmReUYKg\\\":{\\\"token\\\":\\\"$2a$10$LCOCZ7mw5wrX8nlJaJMGS.fx9zVU5Pbs8JkphE7PsZQWzXdEdMGgq\\\",\\\"expiry\\\":1768038368},\\\"UakubXVHJFuVQKRWJcsDTA\\\":{\\\"token\\\":\\\"$2a$10$yVzXiCc17jgmic5VIdUpVO50XmC2DgHnoF8LZbiE1pT88umlKYUI6\\\",\\\"expiry\\\":1768038445},\\\"zzYUYRZgJy4ZazTOou5-Cg\\\":{\\\"token\\\":\\\"$2a$10$BZMRndSDsrtPjjJwzEthbuxwwPpDqyfKC7RlEj9JzcgY.QS3QbVGK\\\",\\\"expiry\\\":1768038483},\\\"4pOpBm16ohekg9kPywJzmQ\\\":{\\\"token\\\":\\\"$2a$10$SLetZljeIgfczq02FoToGeuGbbECIVY4bQYUEK49OBHySwl1UlFbS\\\",\\\"expiry\\\":1768038484}}\""], ["id", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Update (54.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 8], ["current_sign_in_at", "2024-01-10 09:48:04.006236"], ["last_sign_in_at", "2024-01-10 09:47:25.744829"], ["updated_at", "2024-01-10 09:48:04.006665"], ["id", 1]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Update (2.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 8], ["current_sign_in_at", "2024-01-10 09:48:04.062659"], ["last_sign_in_at", "2024-01-10 09:47:25.744829"], ["updated_at", "2024-01-10 09:48:04.063064"], ["id", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=200 allocations=34332 duration=242.19 view=1.21 db=62.80 unpermitted_params=["password_confirmation", "password_confirmation", "password_confirmation", "password_confirmation"] host=localhost query_string= referer= user_agent=curl/8.1.1
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=200 allocations=28225 duration=214.12 view=0.54 db=49.14 unpermitted_params=["password_confirmation", "password_confirmation", "password_confirmation", "password_confirmation"] host=localhost query_string= referer= user_agent=curl/8.1.1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:48:25.501186"], ["tokens", "\"{\\\"5waviC_lCrkTsSXmReUYKg\\\":{\\\"token\\\":\\\"$2a$10$LCOCZ7mw5wrX8nlJaJMGS.fx9zVU5Pbs8JkphE7PsZQWzXdEdMGgq\\\",\\\"expiry\\\":1768038368},\\\"UakubXVHJFuVQKRWJcsDTA\\\":{\\\"token\\\":\\\"$2a$10$yVzXiCc17jgmic5VIdUpVO50XmC2DgHnoF8LZbiE1pT88umlKYUI6\\\",\\\"expiry\\\":1768038445},\\\"zzYUYRZgJy4ZazTOou5-Cg\\\":{\\\"token\\\":\\\"$2a$10$BZMRndSDsrtPjjJwzEthbuxwwPpDqyfKC7RlEj9JzcgY.QS3QbVGK\\\",\\\"expiry\\\":1768038483},\\\"4pOpBm16ohekg9kPywJzmQ\\\":{\\\"token\\\":\\\"$2a$10$SLetZljeIgfczq02FoToGeuGbbECIVY4bQYUEK49OBHySwl1UlFbS\\\",\\\"expiry\\\":1768038484},\\\"vp8Y2ou8_g8qERRQiiVoXw\\\":{\\\"token\\\":\\\"$2a$10$.qJ2jntXAV/tcARrBcFs/.BlwmiPMs6d5h5ejhRO.fWyDlTn7qWFu\\\",\\\"expiry\\\":1768038505}}\""], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 9], ["current_sign_in_at", "2024-01-10 09:48:25.505306"], ["last_sign_in_at", "2024-01-10 09:48:04.062659"], ["updated_at", "2024-01-10 09:48:25.505668"], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=200 allocations=25714 duration=243.28 view=1.90 db=7.65 unpermitted_params=["password_confirmation", "password_confirmation", "password_confirmation", "password_confirmation"] host=localhost query_string= referer= user_agent=curl/8.1.1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "shahzaibsardar777@gmail.com"], ["LIMIT", 1]]
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:52:25.368356"], ["tokens", "\"{\\\"5waviC_lCrkTsSXmReUYKg\\\":{\\\"token\\\":\\\"$2a$10$LCOCZ7mw5wrX8nlJaJMGS.fx9zVU5Pbs8JkphE7PsZQWzXdEdMGgq\\\",\\\"expiry\\\":1768038368},\\\"UakubXVHJFuVQKRWJcsDTA\\\":{\\\"token\\\":\\\"$2a$10$yVzXiCc17jgmic5VIdUpVO50XmC2DgHnoF8LZbiE1pT88umlKYUI6\\\",\\\"expiry\\\":1768038445},\\\"zzYUYRZgJy4ZazTOou5-Cg\\\":{\\\"token\\\":\\\"$2a$10$BZMRndSDsrtPjjJwzEthbuxwwPpDqyfKC7RlEj9JzcgY.QS3QbVGK\\\",\\\"expiry\\\":1768038483},\\\"4pOpBm16ohekg9kPywJzmQ\\\":{\\\"token\\\":\\\"$2a$10$SLetZljeIgfczq02FoToGeuGbbECIVY4bQYUEK49OBHySwl1UlFbS\\\",\\\"expiry\\\":1768038484}}\""], ["id", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+method=DELETE path=/api/v1/users/sign_out format=*/* controller=API::V1::SessionsController action=destroy status=200 allocations=7881 duration=68.10 view=0.13 db=1.77 host=localhost query_string= referer= user_agent=curl/8.1.1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "shahzaibsardar777@gmail.com"], ["LIMIT", 1]]
+Can't verify CSRF token authenticity.
+method=DELETE path=/api/v1/users/sign_out format=*/* controller=API::V1::SessionsController action=destroy status=404 allocations=1355 duration=2.11 view=0.10 db=0.25 host=localhost query_string= referer= user_agent=curl/8.1.1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:53:39.237714"], ["tokens", "\"{\\\"5waviC_lCrkTsSXmReUYKg\\\":{\\\"token\\\":\\\"$2a$10$LCOCZ7mw5wrX8nlJaJMGS.fx9zVU5Pbs8JkphE7PsZQWzXdEdMGgq\\\",\\\"expiry\\\":1768038368},\\\"UakubXVHJFuVQKRWJcsDTA\\\":{\\\"token\\\":\\\"$2a$10$yVzXiCc17jgmic5VIdUpVO50XmC2DgHnoF8LZbiE1pT88umlKYUI6\\\",\\\"expiry\\\":1768038445},\\\"zzYUYRZgJy4ZazTOou5-Cg\\\":{\\\"token\\\":\\\"$2a$10$BZMRndSDsrtPjjJwzEthbuxwwPpDqyfKC7RlEj9JzcgY.QS3QbVGK\\\",\\\"expiry\\\":1768038483},\\\"4pOpBm16ohekg9kPywJzmQ\\\":{\\\"token\\\":\\\"$2a$10$SLetZljeIgfczq02FoToGeuGbbECIVY4bQYUEK49OBHySwl1UlFbS\\\",\\\"expiry\\\":1768038484},\\\"5DEmuxN8_RV5kehhKPTy0w\\\":{\\\"token\\\":\\\"$2a$10$nnYfhTOlgRhqhvY6qPT90.fyYnuo1L93aijT4Na1YyziLq9M8BXQC\\\",\\\"expiry\\\":1768038819}}\""], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 10], ["current_sign_in_at", "2024-01-10 09:53:39.240545"], ["last_sign_in_at", "2024-01-10 09:48:25.505306"], ["updated_at", "2024-01-10 09:53:39.240885"], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=200 allocations=9563 duration=164.90 view=0.07 db=3.14 unpermitted_params=["password_confirmation", "password_confirmation", "password_confirmation", "password_confirmation"] host=localhost query_string= referer= user_agent=curl/8.1.1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "shahzaibsardar777@gmail.com"], ["LIMIT", 1]]
+Can't verify CSRF token authenticity.
+method=DELETE path=/api/v1/users/sign_out format=*/* controller=API::V1::SessionsController action=destroy status=404 allocations=1338 duration=2.41 view=0.11 db=0.25 host=localhost query_string= referer= user_agent=curl/8.1.1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+method=GET path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=new status=405 allocations=150 duration=0.44 view=0.12 db=0.00 host=localhost query_string= referer= user_agent=PostmanRuntime/7.36.0
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:57:49.665625"], ["tokens", "\"{\\\"UakubXVHJFuVQKRWJcsDTA\\\":{\\\"token\\\":\\\"$2a$10$yVzXiCc17jgmic5VIdUpVO50XmC2DgHnoF8LZbiE1pT88umlKYUI6\\\",\\\"expiry\\\":1768038445},\\\"zzYUYRZgJy4ZazTOou5-Cg\\\":{\\\"token\\\":\\\"$2a$10$BZMRndSDsrtPjjJwzEthbuxwwPpDqyfKC7RlEj9JzcgY.QS3QbVGK\\\",\\\"expiry\\\":1768038483},\\\"4pOpBm16ohekg9kPywJzmQ\\\":{\\\"token\\\":\\\"$2a$10$SLetZljeIgfczq02FoToGeuGbbECIVY4bQYUEK49OBHySwl1UlFbS\\\",\\\"expiry\\\":1768038484},\\\"5DEmuxN8_RV5kehhKPTy0w\\\":{\\\"token\\\":\\\"$2a$10$nnYfhTOlgRhqhvY6qPT90.fyYnuo1L93aijT4Na1YyziLq9M8BXQC\\\",\\\"expiry\\\":1768038819},\\\"NtSRp_EhPi6oOCW5uoYw8g\\\":{\\\"token\\\":\\\"$2a$10$SJxU/lUc94mIa9y5ReSpoutaCBM8ik43lyj8Zf0K8hPW4rxHH8YxC\\\",\\\"expiry\\\":1768039069}}\""], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["sign_in_count", 11], ["current_sign_in_at", "2024-01-10 09:57:49.668042"], ["last_sign_in_at", "2024-01-10 09:53:39.240545"], ["current_sign_in_ip", "::1/128"], ["updated_at", "2024-01-10 09:57:49.668347"], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=200 allocations=9832 duration=175.22 view=0.07 db=3.07 unpermitted_params=["password_confirmation", "password_confirmation", "password_confirmation", "password_confirmation"] host=localhost query_string= referer= user_agent=PostmanRuntime/7.36.0
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:58:20.161801"], ["tokens", "\"{\\\"zzYUYRZgJy4ZazTOou5-Cg\\\":{\\\"token\\\":\\\"$2a$10$BZMRndSDsrtPjjJwzEthbuxwwPpDqyfKC7RlEj9JzcgY.QS3QbVGK\\\",\\\"expiry\\\":1768038483},\\\"4pOpBm16ohekg9kPywJzmQ\\\":{\\\"token\\\":\\\"$2a$10$SLetZljeIgfczq02FoToGeuGbbECIVY4bQYUEK49OBHySwl1UlFbS\\\",\\\"expiry\\\":1768038484},\\\"5DEmuxN8_RV5kehhKPTy0w\\\":{\\\"token\\\":\\\"$2a$10$nnYfhTOlgRhqhvY6qPT90.fyYnuo1L93aijT4Na1YyziLq9M8BXQC\\\",\\\"expiry\\\":1768038819},\\\"NtSRp_EhPi6oOCW5uoYw8g\\\":{\\\"token\\\":\\\"$2a$10$SJxU/lUc94mIa9y5ReSpoutaCBM8ik43lyj8Zf0K8hPW4rxHH8YxC\\\",\\\"expiry\\\":1768039069},\\\"NmU5c1RABXNk3CRoIZh21A\\\":{\\\"token\\\":\\\"$2a$10$K06.uIC3v4i5AECERHFowOEUlfwiMB9flMz5q3esKaIlSQMSKbsHS\\\",\\\"expiry\\\":1768039100}}\""], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["sign_in_count", 12], ["current_sign_in_at", "2024-01-10 09:58:20.165127"], ["last_sign_in_at", "2024-01-10 09:57:49.668042"], ["last_sign_in_ip", "::1/128"], ["updated_at", "2024-01-10 09:58:20.165530"], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=200 allocations=9945 duration=176.70 view=0.08 db=3.31 unpermitted_params=["password_confirmation", "password_confirmation", "password_confirmation", "password_confirmation"] host=localhost query_string= referer= user_agent=PostmanRuntime/7.36.0
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:58:21.058966"], ["tokens", "\"{\\\"4pOpBm16ohekg9kPywJzmQ\\\":{\\\"token\\\":\\\"$2a$10$SLetZljeIgfczq02FoToGeuGbbECIVY4bQYUEK49OBHySwl1UlFbS\\\",\\\"expiry\\\":1768038484},\\\"5DEmuxN8_RV5kehhKPTy0w\\\":{\\\"token\\\":\\\"$2a$10$nnYfhTOlgRhqhvY6qPT90.fyYnuo1L93aijT4Na1YyziLq9M8BXQC\\\",\\\"expiry\\\":1768038819},\\\"NtSRp_EhPi6oOCW5uoYw8g\\\":{\\\"token\\\":\\\"$2a$10$SJxU/lUc94mIa9y5ReSpoutaCBM8ik43lyj8Zf0K8hPW4rxHH8YxC\\\",\\\"expiry\\\":1768039069},\\\"NmU5c1RABXNk3CRoIZh21A\\\":{\\\"token\\\":\\\"$2a$10$K06.uIC3v4i5AECERHFowOEUlfwiMB9flMz5q3esKaIlSQMSKbsHS\\\",\\\"expiry\\\":1768039100},\\\"juR65quIpBwva5pURle7Uw\\\":{\\\"token\\\":\\\"$2a$10$3.dHsexr6i5tx959R2WKt.VQgTFJGbZ1IW2Kq3LoukPc6Kn.ejJvO\\\",\\\"expiry\\\":1768039101}}\""], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 13], ["current_sign_in_at", "2024-01-10 09:58:21.065483"], ["last_sign_in_at", "2024-01-10 09:58:20.165127"], ["updated_at", "2024-01-10 09:58:21.066588"], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=200 allocations=9934 duration=241.46 view=0.09 db=3.48 unpermitted_params=["password_confirmation", "password_confirmation", "password_confirmation", "password_confirmation"] host=localhost query_string= referer= user_agent=PostmanRuntime/7.36.0
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:58:27.812579"], ["tokens", "\"{\\\"5DEmuxN8_RV5kehhKPTy0w\\\":{\\\"token\\\":\\\"$2a$10$nnYfhTOlgRhqhvY6qPT90.fyYnuo1L93aijT4Na1YyziLq9M8BXQC\\\",\\\"expiry\\\":1768038819},\\\"NtSRp_EhPi6oOCW5uoYw8g\\\":{\\\"token\\\":\\\"$2a$10$SJxU/lUc94mIa9y5ReSpoutaCBM8ik43lyj8Zf0K8hPW4rxHH8YxC\\\",\\\"expiry\\\":1768039069},\\\"NmU5c1RABXNk3CRoIZh21A\\\":{\\\"token\\\":\\\"$2a$10$K06.uIC3v4i5AECERHFowOEUlfwiMB9flMz5q3esKaIlSQMSKbsHS\\\",\\\"expiry\\\":1768039100},\\\"juR65quIpBwva5pURle7Uw\\\":{\\\"token\\\":\\\"$2a$10$3.dHsexr6i5tx959R2WKt.VQgTFJGbZ1IW2Kq3LoukPc6Kn.ejJvO\\\",\\\"expiry\\\":1768039101},\\\"0anrJZ85R-XgruoMgpHMyQ\\\":{\\\"token\\\":\\\"$2a$10$XESCWiZSFA1ev7SpxOhqx.rY.8bQDVzeiJasX.aIWDNxtrGA1whtq\\\",\\\"expiry\\\":1768039107}}\""], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 14], ["current_sign_in_at", "2024-01-10 09:58:27.815754"], ["last_sign_in_at", "2024-01-10 09:58:21.065483"], ["updated_at", "2024-01-10 09:58:27.816146"], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=200 allocations=9882 duration=164.93 view=0.08 db=3.27 host=localhost query_string= referer= user_agent=PostmanRuntime/7.36.0
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 09:58:28.682784"], ["tokens", "\"{\\\"NtSRp_EhPi6oOCW5uoYw8g\\\":{\\\"token\\\":\\\"$2a$10$SJxU/lUc94mIa9y5ReSpoutaCBM8ik43lyj8Zf0K8hPW4rxHH8YxC\\\",\\\"expiry\\\":1768039069},\\\"NmU5c1RABXNk3CRoIZh21A\\\":{\\\"token\\\":\\\"$2a$10$K06.uIC3v4i5AECERHFowOEUlfwiMB9flMz5q3esKaIlSQMSKbsHS\\\",\\\"expiry\\\":1768039100},\\\"juR65quIpBwva5pURle7Uw\\\":{\\\"token\\\":\\\"$2a$10$3.dHsexr6i5tx959R2WKt.VQgTFJGbZ1IW2Kq3LoukPc6Kn.ejJvO\\\",\\\"expiry\\\":1768039101},\\\"0anrJZ85R-XgruoMgpHMyQ\\\":{\\\"token\\\":\\\"$2a$10$XESCWiZSFA1ev7SpxOhqx.rY.8bQDVzeiJasX.aIWDNxtrGA1whtq\\\",\\\"expiry\\\":1768039107},\\\"dFciKL-284EXaWtYuSg19w\\\":{\\\"token\\\":\\\"$2a$10$3WWueYc1qh./wzF2HgrT6uI/XV380eohXz0n/0O/rWiDOeZSVBs5W\\\",\\\"expiry\\\":1768039108}}\""], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 15], ["current_sign_in_at", "2024-01-10 09:58:28.685147"], ["last_sign_in_at", "2024-01-10 09:58:27.815754"], ["updated_at", "2024-01-10 09:58:28.685708"], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=200 allocations=9885 duration=165.50 view=0.07 db=2.75 host=localhost query_string= referer= user_agent=PostmanRuntime/7.36.0
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+method=DELETE path=/api/v1/users/sign_out format=*/* controller=API::V1::SessionsController action=destroy status=404 allocations=2124 duration=12.70 view=0.33 db=0.00 host=localhost query_string= referer= user_agent=PostmanRuntime/7.36.0
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+method=DELETE path=/api/v1/users/sign_out format=*/* controller=API::V1::SessionsController action=destroy status=404 allocations=280 duration=0.85 view=0.12 db=0.00 host=localhost query_string= referer= user_agent=PostmanRuntime/7.36.0
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 10:04:36.332220"], ["tokens", "\"{\\\"NmU5c1RABXNk3CRoIZh21A\\\":{\\\"token\\\":\\\"$2a$10$K06.uIC3v4i5AECERHFowOEUlfwiMB9flMz5q3esKaIlSQMSKbsHS\\\",\\\"expiry\\\":1768039100},\\\"juR65quIpBwva5pURle7Uw\\\":{\\\"token\\\":\\\"$2a$10$3.dHsexr6i5tx959R2WKt.VQgTFJGbZ1IW2Kq3LoukPc6Kn.ejJvO\\\",\\\"expiry\\\":1768039101},\\\"0anrJZ85R-XgruoMgpHMyQ\\\":{\\\"token\\\":\\\"$2a$10$XESCWiZSFA1ev7SpxOhqx.rY.8bQDVzeiJasX.aIWDNxtrGA1whtq\\\",\\\"expiry\\\":1768039107},\\\"dFciKL-284EXaWtYuSg19w\\\":{\\\"token\\\":\\\"$2a$10$3WWueYc1qh./wzF2HgrT6uI/XV380eohXz0n/0O/rWiDOeZSVBs5W\\\",\\\"expiry\\\":1768039108},\\\"h6dNgqzU8RA77LRktn4NfA\\\":{\\\"token\\\":\\\"$2a$10$v6xGc185Ly9kz/fgcAuh4OgGLUYs1NNO0haQXmLa1RiPefPd8LqCe\\\",\\\"expiry\\\":1768039476}}\""], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 16], ["current_sign_in_at", "2024-01-10 10:04:36.336226"], ["last_sign_in_at", "2024-01-10 09:58:28.685147"], ["updated_at", "2024-01-10 10:04:36.336735"], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=200 allocations=24260 duration=188.87 view=0.07 db=8.17 host=localhost query_string= referer= user_agent=PostmanRuntime/7.36.0
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+method=DELETE path=/api/v1/users/sign_out format=*/* controller=API::V1::SessionsController action=destroy status=404 allocations=280 duration=0.63 view=0.10 db=0.00 host=localhost query_string= referer= user_agent=PostmanRuntime/7.36.0
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+method=DELETE path=/api/v1/users/sign_out format=*/* controller=API::V1::SessionsController action=destroy status=404 allocations=276 duration=0.58 view=0.09 db=0.00 host=localhost query_string= referer= user_agent=PostmanRuntime/7.36.0
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/cart.json"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 11:22:00.100235"], ["tokens", "\"{\\\"juR65quIpBwva5pURle7Uw\\\":{\\\"token\\\":\\\"$2a$10$3.dHsexr6i5tx959R2WKt.VQgTFJGbZ1IW2Kq3LoukPc6Kn.ejJvO\\\",\\\"expiry\\\":1768039101},\\\"0anrJZ85R-XgruoMgpHMyQ\\\":{\\\"token\\\":\\\"$2a$10$XESCWiZSFA1ev7SpxOhqx.rY.8bQDVzeiJasX.aIWDNxtrGA1whtq\\\",\\\"expiry\\\":1768039107},\\\"dFciKL-284EXaWtYuSg19w\\\":{\\\"token\\\":\\\"$2a$10$3WWueYc1qh./wzF2HgrT6uI/XV380eohXz0n/0O/rWiDOeZSVBs5W\\\",\\\"expiry\\\":1768039108},\\\"h6dNgqzU8RA77LRktn4NfA\\\":{\\\"token\\\":\\\"$2a$10$v6xGc185Ly9kz/fgcAuh4OgGLUYs1NNO0haQXmLa1RiPefPd8LqCe\\\",\\\"expiry\\\":1768039476},\\\"ZLj4caXLr-JVU2WaMowO2g\\\":{\\\"token\\\":\\\"$2a$10$R0yYNK9OpQP9hB3FUMxiXOjniGQalgUR3isqDXXytOzJCc6XOjstW\\\",\\\"expiry\\\":1768044120}}\""], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 17], ["current_sign_in_at", "2024-01-10 11:22:00.143346"], ["last_sign_in_at", "2024-01-10 10:04:36.336226"], ["updated_at", "2024-01-10 11:22:00.143914"], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=200 allocations=10016 duration=214.40 view=0.09 db=4.24 host=localhost query_string= referer= user_agent=PostmanRuntime/7.36.0
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+method=DELETE path=/api/v1/users/sign_out format=*/* controller=API::V1::SessionsController action=destroy status=404 allocations=276 duration=0.55 view=0.09 db=0.00 host=localhost query_string= referer= user_agent=curl/8.1.1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+method=DELETE path=/api/v1/users/sign_out format=*/* controller=API::V1::SessionsController action=destroy status=404 allocations=270 duration=0.61 view=0.10 db=0.00 host=localhost query_string= referer= user_agent=curl/8.1.1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "shahzaibsardar777@gmail.com"], ["LIMIT", 1]]
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 11:23:24.587330"], ["tokens", "\"{\\\"juR65quIpBwva5pURle7Uw\\\":{\\\"token\\\":\\\"$2a$10$3.dHsexr6i5tx959R2WKt.VQgTFJGbZ1IW2Kq3LoukPc6Kn.ejJvO\\\",\\\"expiry\\\":1768039101},\\\"0anrJZ85R-XgruoMgpHMyQ\\\":{\\\"token\\\":\\\"$2a$10$XESCWiZSFA1ev7SpxOhqx.rY.8bQDVzeiJasX.aIWDNxtrGA1whtq\\\",\\\"expiry\\\":1768039107},\\\"dFciKL-284EXaWtYuSg19w\\\":{\\\"token\\\":\\\"$2a$10$3WWueYc1qh./wzF2HgrT6uI/XV380eohXz0n/0O/rWiDOeZSVBs5W\\\",\\\"expiry\\\":1768039108},\\\"h6dNgqzU8RA77LRktn4NfA\\\":{\\\"token\\\":\\\"$2a$10$v6xGc185Ly9kz/fgcAuh4OgGLUYs1NNO0haQXmLa1RiPefPd8LqCe\\\",\\\"expiry\\\":1768039476}}\""], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+method=DELETE path=/api/v1/users/sign_out format=*/* controller=API::V1::SessionsController action=destroy status=200 allocations=7833 duration=64.18 view=0.11 db=1.38 host=localhost query_string= referer= user_agent=curl/8.1.1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "shahzaibsardar777@gmail.com"], ["LIMIT", 1]]
+Can't verify CSRF token authenticity.
+method=DELETE path=/api/v1/users/sign_out format=*/* controller=API::V1::SessionsController action=destroy status=404 allocations=1336 duration=2.62 view=0.09 db=0.22 host=localhost query_string= referer= user_agent=curl/8.1.1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 11:23:40.430174"], ["tokens", "\"{\\\"juR65quIpBwva5pURle7Uw\\\":{\\\"token\\\":\\\"$2a$10$3.dHsexr6i5tx959R2WKt.VQgTFJGbZ1IW2Kq3LoukPc6Kn.ejJvO\\\",\\\"expiry\\\":1768039101},\\\"0anrJZ85R-XgruoMgpHMyQ\\\":{\\\"token\\\":\\\"$2a$10$XESCWiZSFA1ev7SpxOhqx.rY.8bQDVzeiJasX.aIWDNxtrGA1whtq\\\",\\\"expiry\\\":1768039107},\\\"dFciKL-284EXaWtYuSg19w\\\":{\\\"token\\\":\\\"$2a$10$3WWueYc1qh./wzF2HgrT6uI/XV380eohXz0n/0O/rWiDOeZSVBs5W\\\",\\\"expiry\\\":1768039108},\\\"h6dNgqzU8RA77LRktn4NfA\\\":{\\\"token\\\":\\\"$2a$10$v6xGc185Ly9kz/fgcAuh4OgGLUYs1NNO0haQXmLa1RiPefPd8LqCe\\\",\\\"expiry\\\":1768039476},\\\"doKNJn-s6U1jaXkUD77VHQ\\\":{\\\"token\\\":\\\"$2a$10$Y6ju6TD.f/7HxxVlFUhIj.rd0Xh2OgLvp4Wa8ewXRWI1j.V1bEXva\\\",\\\"expiry\\\":1768044220}}\""], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 18], ["current_sign_in_at", "2024-01-10 11:23:40.433259"], ["last_sign_in_at", "2024-01-10 11:22:00.143346"], ["updated_at", "2024-01-10 11:23:40.433700"], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=200 allocations=9789 duration=170.82 view=0.08 db=3.34 host=localhost query_string= referer= user_agent=PostmanRuntime/7.36.0
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+method=DELETE path=/api/v1/users/sign_out format=*/* controller=API::V1::SessionsController action=destroy status=404 allocations=274 duration=0.59 view=0.10 db=0.00 host=localhost query_string= referer= user_agent=curl/8.1.1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "shahzaibsardar777@gmail.com"], ["LIMIT", 1]]
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 11:24:35.458415"], ["tokens", "\"{\\\"juR65quIpBwva5pURle7Uw\\\":{\\\"token\\\":\\\"$2a$10$3.dHsexr6i5tx959R2WKt.VQgTFJGbZ1IW2Kq3LoukPc6Kn.ejJvO\\\",\\\"expiry\\\":1768039101},\\\"0anrJZ85R-XgruoMgpHMyQ\\\":{\\\"token\\\":\\\"$2a$10$XESCWiZSFA1ev7SpxOhqx.rY.8bQDVzeiJasX.aIWDNxtrGA1whtq\\\",\\\"expiry\\\":1768039107},\\\"dFciKL-284EXaWtYuSg19w\\\":{\\\"token\\\":\\\"$2a$10$3WWueYc1qh./wzF2HgrT6uI/XV380eohXz0n/0O/rWiDOeZSVBs5W\\\",\\\"expiry\\\":1768039108},\\\"h6dNgqzU8RA77LRktn4NfA\\\":{\\\"token\\\":\\\"$2a$10$v6xGc185Ly9kz/fgcAuh4OgGLUYs1NNO0haQXmLa1RiPefPd8LqCe\\\",\\\"expiry\\\":1768039476}}\""], ["id", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+method=DELETE path=/api/v1/users/sign_out format=*/* controller=API::V1::SessionsController action=destroy status=200 allocations=6673 duration=63.26 view=0.16 db=1.78 host=localhost query_string= referer= user_agent=curl/8.1.1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "shahzaibsardar777@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 11:25:12.803487"], ["tokens", "\"{\\\"juR65quIpBwva5pURle7Uw\\\":{\\\"token\\\":\\\"$2a$10$3.dHsexr6i5tx959R2WKt.VQgTFJGbZ1IW2Kq3LoukPc6Kn.ejJvO\\\",\\\"expiry\\\":1768039101},\\\"0anrJZ85R-XgruoMgpHMyQ\\\":{\\\"token\\\":\\\"$2a$10$XESCWiZSFA1ev7SpxOhqx.rY.8bQDVzeiJasX.aIWDNxtrGA1whtq\\\",\\\"expiry\\\":1768039107},\\\"dFciKL-284EXaWtYuSg19w\\\":{\\\"token\\\":\\\"$2a$10$3WWueYc1qh./wzF2HgrT6uI/XV380eohXz0n/0O/rWiDOeZSVBs5W\\\",\\\"expiry\\\":1768039108},\\\"h6dNgqzU8RA77LRktn4NfA\\\":{\\\"token\\\":\\\"$2a$10$v6xGc185Ly9kz/fgcAuh4OgGLUYs1NNO0haQXmLa1RiPefPd8LqCe\\\",\\\"expiry\\\":1768039476},\\\"54I4zB7x0-4w57My3iVQSA\\\":{\\\"token\\\":\\\"$2a$10$YIdIFqg4UwkBSXbvoSdM6Ol.rLd2S5P216iaXn3KFtrUq9ZOn/WRW\\\",\\\"expiry\\\":1768044312}}\""], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 19], ["current_sign_in_at", "2024-01-10 11:25:12.805813"], ["last_sign_in_at", "2024-01-10 11:23:40.433259"], ["updated_at", "2024-01-10 11:25:12.806060"], ["id", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sessions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+method=POST path=/api/v1/users/sign_in format=*/* controller=API::V1::SessionsController action=create status=200 allocations=9793 duration=168.45 view=0.07 db=2.54 host=localhost query_string= referer= user_agent=PostmanRuntime/7.36.0
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "shahzaibsardar777@gmail.com"], ["LIMIT", 1]]
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."uid" = $1 AND "users"."id" != $2 AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "shahzaibsardar777@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-01-10 11:26:15.247807"], ["tokens", "\"{\\\"juR65quIpBwva5pURle7Uw\\\":{\\\"token\\\":\\\"$2a$10$3.dHsexr6i5tx959R2WKt.VQgTFJGbZ1IW2Kq3LoukPc6Kn.ejJvO\\\",\\\"expiry\\\":1768039101},\\\"0anrJZ85R-XgruoMgpHMyQ\\\":{\\\"token\\\":\\\"$2a$10$XESCWiZSFA1ev7SpxOhqx.rY.8bQDVzeiJasX.aIWDNxtrGA1whtq\\\",\\\"expiry\\\":1768039107},\\\"dFciKL-284EXaWtYuSg19w\\\":{\\\"token\\\":\\\"$2a$10$3WWueYc1qh./wzF2HgrT6uI/XV380eohXz0n/0O/rWiDOeZSVBs5W\\\",\\\"expiry\\\":1768039108},\\\"h6dNgqzU8RA77LRktn4NfA\\\":{\\\"token\\\":\\\"$2a$10$v6xGc185Ly9kz/fgcAuh4OgGLUYs1NNO0haQXmLa1RiPefPd8LqCe\\\",\\\"expiry\\\":1768039476}}\""], ["id", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+method=DELETE path=/api/v1/users/sign_out format=*/* controller=API::V1::SessionsController action=destroy status=200 allocations=6674 duration=77.58 view=0.13 db=1.81 host=localhost query_string= referer= user_agent=PostmanRuntime/7.36.0
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "shahzaibsardar777@gmail.com"], ["LIMIT", 1]]
+Can't verify CSRF token authenticity.
+method=DELETE path=/api/v1/users/sign_out format=*/* controller=API::V1::SessionsController action=destroy status=404 allocations=1327 duration=7.46 view=0.11 db=0.25 host=localhost query_string= referer= user_agent=PostmanRuntime/7.36.0
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/users/sign_up"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+
+AbstractController::ActionNotFound - The action 'new' could not be found for API::V1::RegistrationsController:
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+
+AbstractController::ActionNotFound - The action 'new' could not be found for API::V1::RegistrationsController:
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users/registrations"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+
+AbstractController::ActionNotFound - The action 'new' could not be found for API::V1::RegistrationsController:
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+
+AbstractController::ActionNotFound - The action 'new' could not be found for API::V1::RegistrationsController:
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/users/sign_up"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+
+AbstractController::ActionNotFound - The action 'new' could not be found for API::V1::RegistrationsController:
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+
+AbstractController::ActionNotFound - The action 'new' could not be found for API::V1::RegistrationsController:
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+
+AbstractController::ActionNotFound - The action 'new' could not be found for API::V1::RegistrationsController:
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+
+AbstractController::ActionNotFound - The action 'new' could not be found for API::V1::RegistrationsController:
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+
+AbstractController::ActionNotFound - The action 'new' could not be found for API::V1::RegistrationsController:
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+
+AbstractController::ActionNotFound - The action 'new' could not be found for API::V1::RegistrationsController:
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "flipper_features"."key" AS feature_key, "flipper_gates"."key", "flipper_gates"."value" FROM "flipper_features" LEFT OUTER JOIN "flipper_gates" ON "flipper_features"."key" = "flipper_gates"."feature_key"[0m
+
+AbstractController::ActionNotFound - The action 'new' could not be found for API::V1::RegistrationsController:
+
